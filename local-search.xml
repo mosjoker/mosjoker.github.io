@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>Effcient Semantic Video Segmentation with Per-frame Inference</title>
+    <link href="/2021/02/20/Effcient-Semantic-Video-Segmentation-with-Per-frame-Inference/"/>
+    <url>/2021/02/20/Effcient-Semantic-Video-Segmentation-with-Per-frame-Inference/</url>
+    
+    <content type="html"><![CDATA[<p><strong>Abstract</strong>. 使用 temporal consistency 来约束相邻帧的 prediction map，仅在 training stage 使用，不增加 inference 成本.</p><h4 id="论文介绍"><a href="#论文介绍" class="headerlink" title="#### 论文介绍"></a>#### 论文介绍</h4><p>核心是通过光流计算相邻帧的时序特征，给单帧语义识别网络增加时序特征约束，论文还使用了 Knowledge Distillation 来指导学习 temporal consistency，这点比较新颖，一般语义识别网络中，都是指导学习语义特征。</p><p>其实核心还是通过光流来计算相邻帧的时序特征，比如有 I t 和 I t+k 两帧图像，语义分割网络提取两帧的语义预测结果 Mt、Mt+k，光流网络（flownet2）提取光流预测结果 Ft–&gt;t+k，然后使用光流结果 warp Mt+k 得到 M^t+k ，计算 M^t+k 与Mt 的相关性，论文中使用的是 MSELoss，当然增加了遮挡约束，Occlusion Mask : Mocc = exp(- )</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Deep Learning</tag>
+      
+      <tag>Semantic Segmentation</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>demo</title>
     <link href="/2021/02/19/demo/"/>
     <url>/2021/02/19/demo/</url>
